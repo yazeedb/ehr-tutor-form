@@ -6,10 +6,6 @@ import Html.Attributes exposing (class, cols, rows, value)
 import Html.Events exposing (onClick, onInput)
 
 
-
--- MAIN
-
-
 main =
     Browser.element
         { init = init
@@ -17,10 +13,6 @@ main =
         , subscriptions = subscriptions
         , view = view
         }
-
-
-
--- MODEL
 
 
 type alias Field =
@@ -53,10 +45,6 @@ init _ =
       ]
     , Cmd.none
     )
-
-
-
--- UPDATE
 
 
 type Msg
@@ -93,7 +81,6 @@ update msg model =
                 Nothing ->
                     ( model, Cmd.none )
 
-        -- SUBSCRIPTIONS
         SubmitForm ->
             if formIsValid model then
                 ( model, copyToClipboard (fieldsToHtml model) )
@@ -111,10 +98,6 @@ port copyToClipboard : String -> Cmd msg
 subscriptions : Model -> Sub Msg
 subscriptions model =
     Sub.none
-
-
-
--- VIEW
 
 
 view : Model -> Html Msg
