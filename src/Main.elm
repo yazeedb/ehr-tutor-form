@@ -133,15 +133,9 @@ formIsValid =
 
 fieldsToHtml : List Field -> String
 fieldsToHtml fields =
-    let
-        htmlStrings =
-            List.map
-                (\f ->
-                    "<p>" ++ f.name ++ " " ++ f.value ++ "</p>"
-                )
-                fields
-
-        finalHtml =
-            List.foldr (\acc str -> acc ++ str) "" htmlStrings
-    in
-    finalHtml
+    List.map
+        (\f ->
+            "<p>" ++ f.name ++ " " ++ f.value ++ "</p>"
+        )
+        fields
+        |> String.join ""
