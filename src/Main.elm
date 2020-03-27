@@ -120,8 +120,10 @@ subscriptions model =
 view : Model -> Html Msg
 view model =
     div []
-        [ h1 [ class "title" ] [ text "\"To the Point!\"" ]
-        , button [ class "copy-button", onClick SubmitForm ] [ text "COPYPASTA TIME!" ]
+        [ nav []
+            [ h1 [ class "title" ] [ text "\"To the Point!\"" ]
+            , button [ class "copy-button", onClick SubmitForm ] [ text "COPYPASTA TIME!" ]
+            ]
         , form []
             (List.map viewField model)
         ]

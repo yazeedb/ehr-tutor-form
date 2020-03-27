@@ -6,16 +6,168 @@
     <title>"To the Point!"</title>
   </head>
 
+  <!-- CSS Reset -->
+  <style>
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+ */
+
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+      display: block;
+    }
+    body {
+      line-height: 1;
+    }
+    ol,
+    ul {
+      list-style: none;
+    }
+    blockquote,
+    q {
+      quotes: none;
+    }
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+      content: '';
+      content: none;
+    }
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+  </style>
+
   <style>
     body {
       background-color: #282c35;
       color: white;
       font-family: Avenir, Arial, Helvetica, sans-serif;
-      padding: 25px;
+    }
+
+    nav,
+    form {
+      padding: 10px 25px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: block;
+      z-index: 1;
+      width: 100%;
+      background: #282c35;
+      display: flex;
+      justify-content: space-between;
+      box-shadow: 1px 0px 5px 2px #8e9095;
     }
 
     .title {
-      display: inline-block;
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 5px;
     }
 
     .copy-button {
@@ -28,6 +180,12 @@
       border-radius: 3px;
       font-weight: bold;
       cursor: pointer;
+      position: relative;
+      right: 40px;
+    }
+
+    form {
+      margin-top: 75px;
     }
 
     label {
@@ -43,9 +201,29 @@
     textarea {
       font-size: 16px;
     }
+
+    img {
+      width: 30%;
+      position: fixed;
+      top: 130px;
+      right: 30px;
+    }
+
+    .meme2 {
+      top: 415px;
+    }
+
+    @media only screen and (max-width: 740px) {
+      img {
+        display: none;
+      }
+    }
   </style>
   <body>
     <main></main>
+
+    <img src="./meme.png" />
+    <img src="./meme2.png" class="meme2" />
     <script src="./index.js"></script>
   </body>
 </html>

@@ -11,4 +11,6 @@ app.ports.alertBad.subscribe(function(message) {
 
 app.ports.copyToClipboard.subscribe(function(html) {
   copy(html);
+
+  alert('Copied! Now go finish your homework.');
 });
