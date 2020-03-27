@@ -150,9 +150,13 @@ fieldsToHtml : List Field -> String
 fieldsToHtml fields =
     let
         htmlStrings =
-            List.map (\f -> "<p>" ++ f.name ++ f.value ++ "</p>") fields
+            List.map
+                (\f ->
+                    "<p>" ++ f.name ++ " " ++ f.value ++ "</p>"
+                )
+                fields
 
         finalHtml =
-            List.foldl (\acc str -> acc ++ str) "" htmlStrings
+            List.foldr (\acc str -> acc ++ str) "" htmlStrings
     in
     finalHtml

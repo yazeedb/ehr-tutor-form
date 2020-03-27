@@ -1,6 +1,5 @@
 import { Elm } from './src/Main.elm';
-
-console.log(Elm);
+import copy from 'copy-to-clipboard';
 
 const app = Elm.Main.init({
   node: document.querySelector('main')
@@ -10,4 +9,6 @@ app.ports.alertBad.subscribe(function(message) {
   alert(message);
 });
 
-app.ports.copyToClipboard.subscribe(console.log);
+app.ports.copyToClipboard.subscribe(function(html) {
+  copy(html);
+});
