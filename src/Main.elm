@@ -132,10 +132,9 @@ formIsValid =
 
 
 fieldsToHtml : List Field -> String
-fieldsToHtml fields =
-    List.map
-        (\f ->
-            "<p>" ++ f.name ++ " " ++ f.value ++ "</p>"
-        )
-        fields
-        |> String.join ""
+fieldsToHtml =
+    let
+        toHtml =
+            \f -> "<p>" ++ f.name ++ " " ++ f.value ++ "</p>"
+    in
+    List.map toHtml >> String.join ""
